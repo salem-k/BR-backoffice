@@ -73,9 +73,7 @@ class Event
 
 
     /**
-     * @var \Sequence
-     *
-     * @ORM\ManyToOne(targetEntity="Sequence", inversedBy="events", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="Sequence", inversedBy="events", cascade={"ALL"}, fetch="EAGER")
      */
     private $sequence;
 

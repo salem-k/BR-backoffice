@@ -39,7 +39,8 @@ class Sequence
     private $description;
 
     /**
-      * @ORM\OneToMany(targetEntity="Event", mappedBy="Sequence", cascade={"persist","remove"})
+      * @ORM\OneToMany(targetEntity="Event", mappedBy="sequence",cascade={"ALL"}, fetch="EAGER")
+      * @ORM\JoinColumn(nullable=false)
       */
      private $events;
 
@@ -112,7 +113,6 @@ class Sequence
     /**
      * Get events
      *
-     * @return \AppBundle\Entity\Event
      */
     public function getEvents()
     {
