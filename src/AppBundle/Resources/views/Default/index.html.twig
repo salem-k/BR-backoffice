@@ -1,0 +1,33 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block body %}
+
+<div class="well">
+  {{ form( eventForm, { 'style': 'inline' } ) }}
+  <nav>
+  <ul class="pager">
+    <li class="next">
+    <a href="javascript:void(0)" id="{{ path('event_execute') }}" class="executeOperation" >lancer l'evenement >></a>
+    </li>
+  </ul>
+</nav>
+
+
+
+</div>
+
+<div class="btn-group-vertical" role="group" aria-label="...">
+  <button type="button" class="btn btn-danger">Bouton “Go” : Ecran Jaune</button>
+  <button type="button" class="btn btn-danger">Bouton “Go” : Ecran Vert</button>
+  <button type="button" class="btn btn-danger">Bouton “Go” : Ecran Rouge</button>
+  <button type="button" class="btn btn-danger">Bouton “Go” : Ecran Noir avec écrit en blanc “Batelier Records”.</button>
+  <button type="button" class="btn btn-danger">Bouton “Go” : Bouton “Go” : Ecran blanc avec le logo de Batelier Records</button>
+
+</div>
+
+{% for temp in entities %}
+  {{temp.name}}<br>
+  {{temp.description}}
+{% endfor %}
+
+{% endblock %}
